@@ -123,7 +123,9 @@ func main() {
 	PeopleData()
 	PlanetsData()
 	FilmsData()
+	SpeciesData()
 	VehiclesData()
+	StarshipsData()
 	fmt.Println("Server Open In http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
@@ -173,13 +175,17 @@ func FilmsData() {
 }
 
 func SpeciesData() {
+	maintemp := OpenTemplate("species")
 	data := &Species{}
 	listOfSpecies := []Species{}
-	for i := 1; i <= 37; i++ {
-		searchInApi(fmt.Sprintf("species/%d", i), data)
-		listOfSpecies = append(listOfSpecies, *data)
-	}
-	fmt.Println(listOfSpecies[36])
+	http.HandleFunc("/species", func(rw http.ResponseWriter, r *http.Request) {
+		for i := 1; i <= 37; i++ {
+			searchInApi(fmt.Sprintf("species/%d", i), data)
+			listOfSpecies = append(listOfSpecies, *data)
+		}
+		//fmt.Println(listOfSpecies[36])
+		maintemp.Execute(rw, listOfSpecies)
+	})
 }
 
 func VehiclesData() {
@@ -197,13 +203,51 @@ func VehiclesData() {
 }
 
 func StarshipsData() {
+	maintemp := OpenTemplate("starships")
 	data := &Starships{}
 	listOfStarships := []Starships{}
-	for i := 1; i <= 32; i++ {
-		searchInApi(fmt.Sprintf("starships/%d", i), data)
-		listOfStarships = append(listOfStarships, *data)
-	}
-	fmt.Println(listOfStarships[31])
+	http.HandleFunc("/starships", func(rw http.ResponseWriter, r *http.Request) {
+
+		for i := 2; i <= 3; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 5; i <= 5; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 9; i <= 13; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 15; i <= 15; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 17; i <= 17; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 21; i <= 23; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 27; i <= 29; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 31; i <= 32; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+		for i := 39; i <= 41; i++ {
+			searchInApi(fmt.Sprintf("starships/%d", i), data)
+			listOfStarships = append(listOfStarships, *data)
+		}
+
+		//fmt.Println(listOfStarships[31])
+		maintemp.Execute(rw, listOfStarships)
+	})
 }
 
 func searchInApi(endOfUrl string, target interface{}) error {
