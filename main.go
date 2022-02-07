@@ -121,20 +121,22 @@ type Starships struct {
 
 func main() {
 	PeopleData()
-	PlanetsData()
-	SpeciesData()
-	VehiclesData()
-	StarshipsData()
+	fmt.Println("Server Open In http://localhost:8080")
+	http.ListenAndServe(":8080", nil)
 }
 
 func PeopleData() {
-	data := &People{}
-	listOfPeople := []People{}
-	for i := 1; i <= 83; i++ {
-		searchInApi(fmt.Sprintf("people/%d", i), data)
-		listOfPeople = append(listOfPeople, *data)
-	}
-	fmt.Println(listOfPeople[82])
+	maintemp := OpenTemplate("index")
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		data := &People{}
+		listOfPeople := []People{}
+		for i := 1; i <= 83; i++ {
+			searchInApi(fmt.Sprintf("people/%d", i), data)
+			listOfPeople = append(listOfPeople, *data)
+		}
+		//fmt.Println(listOfPeople[82])
+		maintemp.Execute(rw, listOfPeople)
+	})
 }
 
 func PlanetsData() {
@@ -205,6 +207,9 @@ func searchInApi(endOfUrl string, target interface{}) error {
 }
 
 func OpenTemplate(fileName string) *template.Template {
-	tmpl := template.Must(template.ParseFiles(fmt.Sprintf("./templates/%s.html", fileName), "./templates/components/card.html"))
+	tmpl, err := template.ParseFiles(fmt.Sprintf("./templates/%s.html", fileName))
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 	return tmpl
 }
