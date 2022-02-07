@@ -121,6 +121,9 @@ type Starships struct {
 
 func main() {
 	PeopleData()
+	PlanetsData()
+	FilmsData()
+	VehiclesData()
 	fmt.Println("Server Open In http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
@@ -140,23 +143,33 @@ func PeopleData() {
 }
 
 func PlanetsData() {
+	maintemp := OpenTemplate("planets")
 	data := &Planets{}
 	listOfPlanets := []Planets{}
-	for i := 1; i <= 60; i++ {
-		searchInApi(fmt.Sprintf("planets/%d", i), data)
-		listOfPlanets = append(listOfPlanets, *data)
-	}
-	fmt.Println(listOfPlanets[59])
+	http.HandleFunc("/planets", func(rw http.ResponseWriter, r *http.Request) {
+		for i := 1; i <= 60; i++ {
+			searchInApi(fmt.Sprintf("planets/%d", i), data)
+			listOfPlanets = append(listOfPlanets, *data)
+		}
+
+		maintemp.Execute(rw, listOfPlanets)
+	})
+	//fmt.Println(listOfPlanets[59])
 }
 
 func FilmsData() {
+	maintemp := OpenTemplate("films")
 	data := &Films{}
 	listOfFilms := []Films{}
-	for i := 1; i <= 6; i++ {
-		searchInApi(fmt.Sprintf("films/%d", i), data)
-		listOfFilms = append(listOfFilms, *data)
-	}
-	fmt.Println(listOfFilms[5])
+	http.HandleFunc("/films", func(rw http.ResponseWriter, r *http.Request) {
+		for i := 1; i <= 6; i++ {
+			searchInApi(fmt.Sprintf("films/%d", i), data)
+			listOfFilms = append(listOfFilms, *data)
+		}
+		//fmt.Println(listOfFilms[5])
+		maintemp.Execute(rw, listOfFilms)
+
+	})
 }
 
 func SpeciesData() {
@@ -170,13 +183,17 @@ func SpeciesData() {
 }
 
 func VehiclesData() {
+	maintemp := OpenTemplate("vehicles")
 	data := &Vehicles{}
 	listOfVehicles := []Vehicles{}
-	for i := 1; i <= 38; i++ {
-		searchInApi(fmt.Sprintf("vehicles/%d", i), data)
-		listOfVehicles = append(listOfVehicles, *data)
-	}
-	fmt.Println(listOfVehicles[37])
+	http.HandleFunc("/vehicles", func(rw http.ResponseWriter, r *http.Request) {
+		for i := 4; i <= 38; i++ {
+			searchInApi(fmt.Sprintf("vehicles/%d", i), data)
+			listOfVehicles = append(listOfVehicles, *data)
+		}
+		//fmt.Println(listOfVehicles[37])
+		maintemp.Execute(rw, listOfVehicles)
+	})
 }
 
 func StarshipsData() {
