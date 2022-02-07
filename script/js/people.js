@@ -54,13 +54,13 @@ function makeLine(perso) {
 
     // Contenus
     tdName.appendChild(document.createTextNode(perso.name))
-    tdheight.appendChild(document.createTextNode(perso.biography.height))
-    tdmass.appendChild(document.createTextNode(perso.appearance.mass))
-    tdhair_color.appendChild(document.createTextNode(perso.appearance.hair_color))
-    tdskin_color.appendChild(document.createTextNode(perso.appearance.skin_color))
-    tdeye_color.appendChild(document.createTextNode(perso.appearance.eye_color))
-    tdbirth_year.appendChild(document.createTextNode(perso.biography.birth_year))
-    tdgender.appendChild(document.createTextNode(perso.biography.alignment))
+    tdheight.appendChild(document.createTextNode(perso.height))
+    tdmass.appendChild(document.createTextNode(perso.mass))
+    tdhair_color.appendChild(document.createTextNode(perso.hair_color))
+    tdskin_color.appendChild(document.createTextNode(perso.skin_color))
+    tdeye_color.appendChild(document.createTextNode(perso.eye_color))
+    tdbirth_year.appendChild(document.createTextNode(perso.birth_year))
+    tdgender.appendChild(document.createTextNode(perso.alignment))
     tr.appendChild(tdName); tr.appendChild(tdheight); tr.appendChild(tdmass); tr.appendChild(tdhair_color); tr.appendChild(tdskin_color); tr.appendChild(tdeye_color); tr.appendChild(tdbirth_year); tr.appendChild(tdgender)
 
     tabLines.push(tr)
