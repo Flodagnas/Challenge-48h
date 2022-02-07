@@ -120,17 +120,71 @@ type Starships struct {
 }
 
 func main() {
-	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		data := &People{}
-		listOfPeople := []People{}
-		for i := 1; i <= 83; i++ {
-			searchInApi(fmt.Sprintf("artists/%d", i), data)
-			listOfPeople = append(listOfPeople, *data)
-		}
-		fmt.Println(listOfPeople)
-	})
-	fmt.Println("Server Open In http://localhost:8080")
-	//http.ListenAndServe(":8080", nil)
+	PeopleData()
+	PlanetsData()
+	SpeciesData()
+	VehiclesData()
+	StarshipsData()
+}
+
+func PeopleData() {
+	data := &People{}
+	listOfPeople := []People{}
+	for i := 1; i <= 83; i++ {
+		searchInApi(fmt.Sprintf("people/%d", i), data)
+		listOfPeople = append(listOfPeople, *data)
+	}
+	fmt.Println(listOfPeople[82])
+}
+
+func PlanetsData() {
+	data := &Planets{}
+	listOfPlanets := []Planets{}
+	for i := 1; i <= 60; i++ {
+		searchInApi(fmt.Sprintf("planets/%d", i), data)
+		listOfPlanets = append(listOfPlanets, *data)
+	}
+	fmt.Println(listOfPlanets[59])
+}
+
+func FilmsData() {
+	data := &Films{}
+	listOfFilms := []Films{}
+	for i := 1; i <= 6; i++ {
+		searchInApi(fmt.Sprintf("films/%d", i), data)
+		listOfFilms = append(listOfFilms, *data)
+	}
+	fmt.Println(listOfFilms[5])
+}
+
+func SpeciesData() {
+	data := &Species{}
+	listOfSpecies := []Species{}
+	for i := 1; i <= 37; i++ {
+		searchInApi(fmt.Sprintf("species/%d", i), data)
+		listOfSpecies = append(listOfSpecies, *data)
+	}
+	fmt.Println(listOfSpecies[36])
+}
+
+func VehiclesData() {
+	data := &Vehicles{}
+	listOfVehicles := []Vehicles{}
+	for i := 1; i <= 38; i++ {
+		searchInApi(fmt.Sprintf("vehicles/%d", i), data)
+		listOfVehicles = append(listOfVehicles, *data)
+	}
+	fmt.Println(listOfVehicles[37])
+}
+
+func StarshipsData() {
+	data := &Starships{}
+	listOfStarships := []Starships{}
+	for i := 1; i <= 32; i++ {
+		searchInApi(fmt.Sprintf("starships/%d", i), data)
+		listOfStarships = append(listOfStarships, *data)
+	}
+	fmt.Println(listOfStarships[31])
 }
 
 func searchInApi(endOfUrl string, target interface{}) error {
