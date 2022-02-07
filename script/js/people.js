@@ -53,14 +53,14 @@ function makeLine(perso) {
     let tdgender = document.createElement('td')
 
     // Contenus
-    tdName.appendChild(document.createTextNode(perso.name))
-    tdheight.appendChild(document.createTextNode(perso.height))
-    tdmass.appendChild(document.createTextNode(perso.mass))
-    tdhair_color.appendChild(document.createTextNode(perso.hair_color))
-    tdskin_color.appendChild(document.createTextNode(perso.skin_color))
-    tdeye_color.appendChild(document.createTextNode(perso.eye_color))
-    tdbirth_year.appendChild(document.createTextNode(perso.birth_year))
-    tdgender.appendChild(document.createTextNode(perso.alignment))
+    tdName.appendChild(document.createTextNode(people.name))
+    tdheight.appendChild(document.createTextNode(people.height))
+    tdmass.appendChild(document.createTextNode(people.mass))
+    tdhair_color.appendChild(document.createTextNode(people.hair_color))
+    tdskin_color.appendChild(document.createTextNode(people.skin_color))
+    tdeye_color.appendChild(document.createTextNode(people.eye_color))
+    tdbirth_year.appendChild(document.createTextNode(people.birth_year))
+    tdgender.appendChild(document.createTextNode(people.alignment))
     tr.appendChild(tdName); tr.appendChild(tdheight); tr.appendChild(tdmass); tr.appendChild(tdhair_color); tr.appendChild(tdskin_color); tr.appendChild(tdeye_color); tr.appendChild(tdbirth_year); tr.appendChild(tdgender)
 
     tabLines.push(tr)
