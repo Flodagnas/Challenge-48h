@@ -1,10 +1,10 @@
 body {
-    background: hsl(0, 0%, 92%);
+    background: hsl(0, 0%, 75%);
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
-    color: hsl(150, 90%, 50%);
+    color: hsl(209, 90%, 50%);
 }
 
 #tableau {
@@ -26,7 +26,7 @@ h1 {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: hsl(150, 90%, 60%);
+    background-color: hsl(209, 90%, 50%);
     color: white;
 }
 
@@ -35,14 +35,12 @@ h1 {
     margin-bottom: 15px;
 }
 
-#id, #name, #fullName, #race, #gender, #height, #weight, #placeOfBirth, #alignement, #intelligence, #strength, #speed, #durability,
-#power, #combat {
+#name, #height, #mass, #race, #height, #hair_color, #skin_color, #eye_color, #birth_year, #gender{
     cursor: pointer;
 }
 
-#id:hover, #name:hover, #fullName:hover, #race:hover, #gender:hover, #height:hover, #weight:hover, #placeOfBirth:hover, #alignement:hover,
-#intelligence:hover, #strength:hover, #speed:hover, #durability:hover, #power:hover, #combat:hover {
-    background-color: hsl(150, 75%, 55%);
+#name:hover, #height:hover, #mass:hover, #race:hover, #height:hover, #hair_color:hover, #skin_color:hover, #eye_color:hover, #birth_year:hover, #gender:hover{
+    background-color: hsl(202, 95%, 64%);
 }
 
 #id:active, #name:active, #fullName:active {
