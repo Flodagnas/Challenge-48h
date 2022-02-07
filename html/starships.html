@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+    </head>
+    <body>
+        <li><a href="home">Home</a></li>
+        <li><a href="index">Index</a></li>
+        <li><a href="people">People</a></li>
+      {{range $}}   
+    <ul>
+       <li>Name : {{.Name}}    </li>   
+       <li>Model : {{Model}}    </li>   
+       <li>Manufacturer : {{.Manufacturer}}    </li>   
+       <li>CostInCredits : {{.CostInCredits}}    </li>   
+       <li>Length : {{.Length}}    </li>   
+       <li>MaxAtmospheringSpeed : {{.MaxAtmospheringSpeed}}    </li>
+       <li>Crew : {{.Crew}}    </li>   
+       <li>Passengers : {{.Passengers}}    </li>   
+       <li>Homeworld: {{.Homeworld}}    </li>   
+       <li>CargoCapacity : {{.CargoCapacity}} </li>   
+       <li>Consumables : {{.Consumables}} </li>   
+       <li>HyperdriveRating : {{.HyperdriveRating}} </li>     
+       <li>Mglt : {{.Mglt}} </li> 
+       <li>Pilots : {{.Pilots}} </li>  
+       <li>Films : {{.Films}} </li>    
+       <li>Created : {{.Created}} </li>
+       <li>Edited : {{.Edited}} </li>
+       <li>URL : {{.URL}} </li>
+    </ul>
+       {{end}}
+    </body>
+</html>
