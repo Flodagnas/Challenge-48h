@@ -1,0 +1,55 @@
+body {
+    background: hsl(0, 0%, 92%);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: hsl(150, 90%, 50%);
+}
+
+#tableau {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tableau td, #tableau th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableau tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableau tr:hover {background-color: #ddd;}
+
+#tableau th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hsl(150, 90%, 60%);
+    color: white;
+}
+
+.search {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+#id, #name, #fullName, #race, #gender, #height, #weight, #placeOfBirth, #alignement, #intelligence, #strength, #speed, #durability,
+#power, #combat {
+    cursor: pointer;
+}
+
+#id:hover, #name:hover, #fullName:hover, #race:hover, #gender:hover, #height:hover, #weight:hover, #placeOfBirth:hover, #alignement:hover,
+#intelligence:hover, #strength:hover, #speed:hover, #durability:hover, #power:hover, #combat:hover {
+    background-color: hsl(150, 75%, 55%);
+}
+
+#id:active, #name:active, #fullName:active {
+    outline: 1px hsl(150, 90%, 80%);
+}
+
+#heroes {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
