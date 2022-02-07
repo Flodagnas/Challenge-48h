@@ -50,8 +50,46 @@
         </div>
         <button class="bouton" name="previous">Previous Page</button>
         <button class="bouton" name="next">Next Page</button>
+       
+        <script src="../scripts/js/swapi.js"></script>
+
         <script>
-            let people = '{{.listOfPeople}}'
+            document.addEventListener("DOMContentLoaded", init);
+
+            function init() { 
+             var con = document.querySelector("#console");
+
+            function log(){
+                console.log(...arguments);
+        
+                var pre = document.createElement("pre");
+
+                for(var arg of arguments) {
+                    switch( typeof arg )
+                    {
+                        case "string":
+                            pre.append(arg);
+                        break;
+                        default:
+                        pre.append(JSON.stringify(arg, null ,2));
+                     }
+
+                        pre.append(" ");
+                }
+
+                    con.append(pre);
+        
+            }
+
+                log("load");
+                    //get one person (assumes 1 works)
+				    swapiModule.getPerson(1,function(data) {
+					log("Result of getPerson/1", data);
+				    });
+
+                    
+            }
         </script>
+        <div id="console"></div>
     </body>
 </html>

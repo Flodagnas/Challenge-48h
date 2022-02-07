@@ -36,6 +36,7 @@ function callJson() {
     .then(pagination)
 }
 
+
 // Création et affichage des lignes du tableau
 function makeLine(perso) {
     let tbody = document.getElementById('elements')
