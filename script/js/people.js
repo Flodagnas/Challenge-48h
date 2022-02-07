@@ -1,5 +1,7 @@
 console.log("Script display loaded")
 
+people = people.slice(1, people.length -1).split("  ")
+
 let linesInTab = []
 let pageNumero = 0
 let select = document.getElementById('nb-elem').value
