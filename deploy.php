@@ -1,7 +1,7 @@
 <?php 
 
-`git pull`;
-
+    `git pull`;
+    passthrul('date');
 
 
 ?>
