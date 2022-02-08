@@ -31,6 +31,7 @@ const callJson = async (page = pageNumero) => {
       .then((res) => res.json());
       loadTab(films.results);
       page += 1
+      link1 = films.results[0].species[0] ;
     }
 };
 
