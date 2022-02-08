@@ -8,6 +8,52 @@
         <title>Planets</title>
     </head>
     <body>
-
+        <div class="title">
+            <h1>Planets</h1>
+        </div>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
+        <select name="nombre" id="nb-elem">
+            <option value="20">--Please choose an option--</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="">all results</option>
+        </select>
+        <div class="search">
+            <label for="searchInput">Search</label>
+            <input type="text" name="searchInput" id="searchInput">
+            <select name="searchSelect" id="searchSelect">
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+                <option value="height">Height</option>
+            </select>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <div id="heroes">
+            <table id="tableau">
+                <thead>
+                    <tr>
+                        <th id="name" class="notReverse">Name</th>
+                        <th id="rotation_period" >Rotation Period</th>
+                        <th id="orbital_period">Orbital Period</th>
+                        <th id="diameter">Diameter</th>
+                        <th id="climate">Climate</th>
+                        <th id="gravity">Gravity</th>
+                        <th id="terrain">Terrain</th>
+                        <th id="surface_water">Surface Water</th>
+                        <th id="population">Population</th>
+                        <th id="created">Created</th>
+                        <th id="edited">Edited</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <script src="../scripts/js/planets.js"></script>
     </body>
 </html>
