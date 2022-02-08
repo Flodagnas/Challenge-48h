@@ -2,12 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/films.css">
-        <title>Films</title>
+        <title>Accueil</title>
     </head>
     <body>
-
+      {{range $}}   
+    <ul>
+       <li>Title : {{.Title}}    </li>   
+       <li>EpisodeID : {{.EpisodeID}}    </li>   
+       <li>OpeningCrawl : {{.OpeningCrawl}}    </li>   
+       <li>Director : {{.Director}}    </li>   
+       <li>Producer : {{.Producer}}    </li>   
+       <li>ReleaseDate : {{.ReleaseDate}}    </li>   
+       <li>Characters : {{.Characters}}    </li>   
+       <li>Planets: {{.Planets}}    </li>   
+       <li>Starships : {{.Starships}} </li>   
+       <li>Vehicles : {{.Vehicles}} </li>   
+       <li>Created : {{.Created}} </li> 
+       <li>Edited : {{.Edited}} </li>  
+       <li>URL : {{.URL}} </li>         
+    </ul>
+       {{end}}
     </body>
 </html>
