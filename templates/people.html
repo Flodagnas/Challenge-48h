@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/people.css">
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="title">
+            <h1>People</h1>
+        </div>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
+        <select name="nombre" id="nb-elem">
+            <option value="20">--Please choose an option--</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="">all results</option>
+        </select>
+        <div class="search">
+            <label for="searchInput">Search</label>
+            <input type="text" name="searchInput" id="searchInput">
+            <select name="searchSelect" id="searchSelect">
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+                <option value="height">Height</option>
+            </select>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <div id="heroes">
+            <table id="tableau">
+                <thead>
+                    <tr>
+                        <th id="name" class="notReverse">Name</th>
+                        <th id="height" >Height</th>
+                        <th id="mass">Mass</th>
+                        <th id="hair_color">Hair color</th>
+                        <th id="skin_color">Skin color</th>
+                        <th id="eye_color">Eye color</th>
+                        <th id="birth_year">Birth year</th>
+                        <th id="gender">Gender</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <script src="../scripts/js/people.js"></script>
+    </body>
+</html>

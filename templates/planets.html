@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+    </head>
+    <body>
+      {{range $}}   
+    <ul>
+       <li>Name : {{.Name}}    </li>   
+       <li>RotationPeriod : {{.RotationPeriod}}    </li>   
+       <li>OrbitalPeriod : {{.OrbitalPeriod}}    </li>   
+       <li>Diameter : {{.Diameter}}    </li>   
+       <li>Climate : {{.Climate}}    </li>   
+       <li>Gravity : {{.Gravity}}    </li>   
+       <li>Terrain : {{.Terrain}}    </li>   
+       <li>SurfaceWater: {{.SurfaceWater}}    </li>   
+       <li>Population : {{.Population}} </li>   
+       <li>Residents : {{.Residents}} </li>   
+       <li>Films : {{.Films}} </li>   
+       <li>Created : {{.Created}} </li>   
+       <li>Edited : {{.Edited}} </li> 
+       <li>URL : {{.URL}} </li>  
+    </ul>
+       {{end}}
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+    </head>
+    <body>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="people.html">People</a></li>
+      {{range $}}   
+    <ul>
+       <li>Name : {{.Name}}    </li>   
+       <li>Classification : {{Classification}}    </li>   
+       <li>Designation : {{.Designation}}    </li>   
+       <li>AverageHeight : {{.AverageHeight}}    </li>   
+       <li>SkinColors : {{.SkinColors}}    </li>   
+       <li>HairColors : {{.HairColors}}    </li>
+       <li>EyeColors : {{.EyeColors}}    </li>   
+       <li>AverageLifespan : {{.AverageLifespan}}    </li>   
+       <li>Homeworld: {{.Homeworld}}    </li>   
+       <li>Language : {{.Language}} </li>   
+       <li>People : {{.People}} </li>   
+       <li>Films : {{.Films}} </li>     
+       <li>Created : {{.Created}} </li> 
+       <li>Edited : {{.Edited}} </li>  
+       <li>URL : {{.URL}} </li>    
+    </ul>
+       {{end}}
+    </body>
+</html>

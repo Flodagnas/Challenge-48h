@@ -1,0 +1,24 @@
+{
+  "name": "challenge-48h",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flodagnas/Challenge-48h.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flodagnas/Challenge-48h/issues"
+  },
+  "homepage": "https://github.com/Flodagnas/Challenge-48h#readme",
+  "dependencies": {
+    "axios": "^0.25.0"
+  }
+}
