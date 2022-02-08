@@ -1,0 +1,53 @@
+body {
+    background: hsl(0, 0%, 75%);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: hsl(209, 90%, 50%);
+}
+
+#tableau {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tableau td, #tableau th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableau tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableau tr:hover {background-color: #ddd;}
+
+#tableau th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hsl(209, 90%, 50%);
+    color: white;
+}
+
+.search {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+#name, #height, #mass, #race, #height, #hair_color, #skin_color, #eye_color, #birth_year, #gender{
+    cursor: pointer;
+}
+
+#name:hover, #height:hover, #mass:hover, #race:hover, #height:hover, #hair_color:hover, #skin_color:hover, #eye_color:hover, #birth_year:hover, #gender:hover{
+    background-color: hsl(202, 95%, 64%);
+}
+
+#id:active, #name:active, #fullName:active {
+    outline: 1px hsl(150, 90%, 80%);
+}
+
+#heroes {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
