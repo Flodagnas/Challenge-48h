@@ -32,13 +32,13 @@ const loadTab = (persoes) => {
 
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
-    const vehicles = await fetch(
-        `https://swapi.dev/api/vehicles/?page=${page}`
-    )
-    .then((res) => res.json());
-    loadTab(vehicles.results);
-};
-
+    while (page != 5) {
+      const vehicles = await fetch(`https://swapi.dev/api/vehicles/?page=${page}`)
+      .then((res) => res.json());
+      loadTab(vehicles.results);
+      page += 1
+    }
+  };
 // Création et affichage des lignes du tableau
 function makeLine(perso) {
     let tbody = document.getElementById("elements");

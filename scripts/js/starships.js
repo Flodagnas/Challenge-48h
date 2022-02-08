@@ -34,11 +34,12 @@ const loadTab = (persoes) => {
 
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
-    const starships = await fetch(
-        `https://swapi.dev/api/starships/?page=${page}`
-    )
+  while (page != 5) {
+    const starships = await fetch(`https://swapi.dev/api/starships/?page=${page}`)
     .then((res) => res.json());
     loadTab(starships.results);
+    page += 1
+  }
 };
 
 // Création et affichage des lignes du tableau

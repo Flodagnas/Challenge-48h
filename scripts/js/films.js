@@ -26,11 +26,12 @@ const loadTab = (persoes) => {
 
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
-    const films = await fetch(
-        `https://swapi.dev/api/films/?page=${page}`
-    )
-    .then((res) => res.json());
-    loadTab(films.results);
+    while (page != 2) {
+      const films = await fetch(`https://swapi.dev/api/films/?page=${page}`)
+      .then((res) => res.json());
+      loadTab(films.results);
+      page += 1
+    }
 };
 
 // Création et affichage des lignes du tableau
