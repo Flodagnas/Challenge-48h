@@ -1,6 +1,5 @@
 
 
-
 var link 
 let request = new XMLHttpRequest(); {
 request.open("GET","https://swapi.dev/api/films/1")
