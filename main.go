@@ -131,7 +131,7 @@ func main() {
 }
 
 func PeopleData() {
-	maintemp := OpenTemplate("index")
+	maintemp := OpenTemplate("people")
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 		data := &People{}
 		listOfPeople := []People{}
