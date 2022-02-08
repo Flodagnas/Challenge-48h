@@ -34,15 +34,20 @@ const callJson = async (page = pageNumero) => {
       .then((res) => res.json());
       loadTab(people.results);
       page += 1
+      
+    //console.log (people.results) ;
     }
 };
 
 const callJson2 = async (page = pageNumero) => {
     const planets = await fetch(
-        `https://swapi.dev/api/planets/?page=${page}`
+        `https://swapi.dev/api/planets/1/`
     )
     .then((res) => res.json());
     loadTab(planets.results);
+
+    console.log (planets.results) ;
+
 };
 
 // Création et affichage des lignes du tableau
@@ -97,6 +102,8 @@ function makeLine(perso) {
 
     tabLines.push(tr);
     tbody.appendChild(tr);
+
 }
 
 callJson();
+callJson2(); 
