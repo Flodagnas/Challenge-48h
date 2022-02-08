@@ -35,7 +35,6 @@ const callJson = async (page = pageNumero) => {
       loadTab(people.results);
       page += 1
       
-    //console.log (people.results) ;
     }
 };
 
