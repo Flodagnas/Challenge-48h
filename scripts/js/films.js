@@ -2,7 +2,6 @@ console.log("Script display loaded");
 
 let linesInTab = [];
 let pageNumero = 1;
-let select = document.getElementById("nb-elem").value;
 
 // Traitement du tableu de données
 const loadTab = (persoes) => {
@@ -31,20 +30,7 @@ const callJson = async (page = pageNumero) => {
         `https://swapi.dev/api/films/?page=${page}`
     )
     .then((res) => res.json());
-    pagination(films.results)
     loadTab(films.results);
-};
-
-const nextRes = () => {
-    document.getElementById("tableau").querySelector("tbody").remove();
-    pageNumero++;
-    callJson(pageNumero);
-};
-
-const previousRes = () => {
-    document.getElementById("tableau").querySelector("tbody").remove();
-    pageNumero--;
-    callJson(pageNumero);
 };
 
 // Création et affichage des lignes du tableau
@@ -62,20 +48,20 @@ function makeLine(perso) {
     let tdcharacters = document.createElement("td");
     let tdplanets = document.createElement("td");
     let tdstarships = document.createElement("td");
-    let vehicles = document.createElement("td");
-    let tdstarships = document.createElement("td");
+    let tdvehicles = document.createElement("td");
+    let tdspecies = document.createElement("td");
 
     // Contenus
-    tdtitle.appendChild(document.createTextNode(people.title));
-    tdopening_crawl.appendChild(document.createTextNode(people.opening_crawl));
-    tddirector.appendChild(document.createTextNode(people.director));
-    tdproducer.appendChild(document.createTextNode(people.producer));
-    tdrelease_date.appendChild(document.createTextNode(people.release_date));
-    tdcharacters.appendChild(document.createTextNode(people.characters));
-    tdplanets.appendChild(document.createTextNode(people.planets));
-    tdstarships.appendChild(document.createTextNode(people.starships));
-    tdvehicles.appendChild(document.createTextNode(people.vehicles));
-    tdspecies.appendChild(document.createTextNode(people.species));
+    tdtitle.appendChild(document.createTextNode(films.title));
+    tdopening_crawl.appendChild(document.createTextNode(films.opening_crawl));
+    tddirector.appendChild(document.createTextNode(films.director));
+    tdproducer.appendChild(document.createTextNode(films.producer));
+    tdrelease_date.appendChild(document.createTextNode(films.release_date));
+    tdcharacters.appendChild(document.createTextNode(films.characters));
+    tdplanets.appendChild(document.createTextNode(films.planets));
+    tdstarships.appendChild(document.createTextNode(films.starships));
+    tdvehicles.appendChild(document.createTextNode(films.vehicles));
+    tdspecies.appendChild(document.createTextNode(films.species));
     tr.appendChild(tdtitle);
     tr.appendChild(tdopening_crawl);
     tr.appendChild(tddirector);
@@ -90,51 +76,5 @@ function makeLine(perso) {
     tabLines.push(tr);
     tbody.appendChild(tr);
 }
-
-// Pagination du tableau
-function pagination() {
-    let tbody = document.getElementById("elements");
-    let lines = document.querySelectorAll(".line");
-    lines.forEach((line) => {
-        line.remove();
-    });
-    if (select === "") {
-        for (let i = 0; i < linesInTab.length; i++) {
-        tbody.appendChild(linesInTab[i]);
-        }
-    } else {
-        let start = parseInt(pageNumero) * parseInt(select);
-        let end = parseInt(start) + parseInt(select) - 1;
-        let tri = linesInTab.slice(start, end);
-        for (let line of tri) {
-        tbody.appendChild(line);
-        }
-    }
-}
-
-// Boutons 'next' et 'previous' pour pagination
-document.getElementsByName("previous")[0].addEventListener("click", () => {
-    pageNumero -= 1;
-    pagination();
-});
-document.getElementsByName("previous")[1].addEventListener("click", () => {
-    pageNumero -= 1;
-    pagination();
-});
-document.getElementsByName("next")[0].addEventListener("click", () => {
-    pageNumero += 1;
-    pagination();
-});
-document.getElementsByName("next")[1].addEventListener("click", () => {
-    pageNumero += 1;
-    pagination();
-});
-
-// Liste à choix pour pagination
-document.getElementById("nb-elem").addEventListener("change", () => {
-    select = document.getElementById("nb-elem").value;
-    console.log(select);
-    pagination();
-});
 
 callJson();

@@ -2,7 +2,6 @@ console.log("Script display loaded");
 
 let linesInTab = [];
 let pageNumero = 1;
-let select = document.getElementById("nb-elem").value;
 
 // Traitement du tableu de données
 const loadTab = (persoes) => {
