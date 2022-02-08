@@ -33,19 +33,6 @@ const callJson = async (page = pageNumero) => {
     )
     .then((res) => res.json());
     loadTab(planets.results);
-    pagination(planets.results)
-};
-
-const nextRes = () => {
-  document.getElementById("tableau").querySelector("tbody").remove();
-  pageNumero++;
-  callJson(pageNumero);
-};
-
-const previousRes = () => {
-  document.getElementById("tableau").querySelector("tbody").remove();
-  pageNumero--;
-  callJson(pageNumero);
 };
 
 // Création et affichage des lignes du tableau
@@ -94,51 +81,5 @@ function makeLine(perso) {
   tabLines.push(tr);
   tbody.appendChild(tr);
 }
-
-// Pagination du tableau
-function pagination() {
-  let tbody = document.getElementById("elements");
-  let lines = document.querySelectorAll(".line");
-  lines.forEach((line) => {
-    line.remove();
-  });
-  if (select === "") {
-    for (let i = 0; i < linesInTab.length; i++) {
-      tbody.appendChild(linesInTab[i]);
-    }
-  } else {
-    let start = parseInt(pageNumero) * parseInt(select);
-    let end = parseInt(start) + parseInt(select) - 1;
-    let tri = linesInTab.slice(start, end);
-    for (let line of tri) {
-      tbody.appendChild(line);
-    }
-  }
-}
-
-// Boutons 'next' et 'previous' pour pagination
-document.getElementsByName("previous")[0].addEventListener("click", () => {
-  pageNumero -= 1;
-  pagination();
-});
-document.getElementsByName("previous")[1].addEventListener("click", () => {
-  pageNumero -= 1;
-  pagination();
-});
-document.getElementsByName("next")[0].addEventListener("click", () => {
-  pageNumero += 1;
-  pagination();
-});
-document.getElementsByName("next")[1].addEventListener("click", () => {
-  pageNumero += 1;
-  pagination();
-});
-
-// Liste à choix pour pagination
-document.getElementById("nb-elem").addEventListener("change", () => {
-  select = document.getElementById("nb-elem").value;
-  console.log(select);
-  pagination();
-});
 
 callJson();

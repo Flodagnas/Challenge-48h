@@ -18,6 +18,11 @@ const loadTab = (persoes) => {
         tr.innerHTML += `<td>${perso.eye_color}</td>`;
         tr.innerHTML += `<td>${perso.birth_year}</td>`;
         tr.innerHTML += `<td>${perso.gender}</td>`;
+        tr.innerHTML += `<td>${perso.homeworld}</td>`;
+        tr.innerHTML += `<td>${perso.films}</td>`;
+        tr.innerHTML += `<td>${perso.species}</td>`;
+        tr.innerHTML += `<td>${perso.vehicles}</td>`;
+        tr.innerHTML += `<td>${perso.starships}</td>`;
         tbody.appendChild(tr);
     });
     table.appendChild(tbody);
@@ -29,20 +34,15 @@ const callJson = async (page = pageNumero) => {
         `https://swapi.dev/api/people/?page=${page}`
     )
     .then((res) => res.json());
-    pagination(peoples.results)
     loadTab(peoples.results);
 };
 
-const nextRes = () => {
-    document.getElementById("tableau").querySelector("tbody").remove();
-    pageNumero++;
-    callJson(pageNumero);
-};
-
-const previousRes = () => {
-    document.getElementById("tableau").querySelector("tbody").remove();
-    pageNumero--;
-    callJson(pageNumero);
+const callJson2 = async (page = pageNumero) => {
+    const planets = await fetch(
+        `https://swapi.dev/api/planets/?page=${page}`
+    )
+    .then((res) => res.json());
+    loadTab(planets.results);
 };
 
 // Création et affichage des lignes du tableau
@@ -60,6 +60,12 @@ function makeLine(perso) {
     let tdeye_color = document.createElement("td");
     let tdbirth_year = document.createElement("td");
     let tdgender = document.createElement("td");
+    let tdhomeworld = document.createElement("td");
+    let tdfilms = document.createElement("td");
+    let tdspecies = document.createElement("td");
+    let tdvehicles = document.createElement("td");
+    let tdstarships = document.createElement("td");
+
 
     // Contenus
     tdName.appendChild(document.createTextNode(people.name));
@@ -70,6 +76,11 @@ function makeLine(perso) {
     tdeye_color.appendChild(document.createTextNode(people.eye_color));
     tdbirth_year.appendChild(document.createTextNode(people.birth_year));
     tdgender.appendChild(document.createTextNode(people.gender));
+    tdhomeworld.appendChild(document.createTextNode(planets.name));
+    tdfilms.appendChild(document.createTextNode(people.films));
+    tdspecies.appendChild(document.createTextNode(people.species));
+    tdvehicles.appendChild(document.createTextNode(people.vehicles));
+    tdstarships.appendChild(document.createTextNode(people.starships));
     tr.appendChild(tdName);
     tr.appendChild(tdheight);
     tr.appendChild(tdmass);
@@ -78,55 +89,14 @@ function makeLine(perso) {
     tr.appendChild(tdeye_color);
     tr.appendChild(tdbirth_year);
     tr.appendChild(tdgender);
+    tr.appendChild(tdhomeworld);
+    tr.appendChild(tdfilms);
+    tr.appendChild(tdspecies);
+    tr.appendChild(tdvehicles);
+    tr.appendChild(tdstarships);
 
     tabLines.push(tr);
     tbody.appendChild(tr);
 }
-
-// Pagination du tableau
-function pagination() {
-    let tbody = document.getElementById("elements");
-    let lines = document.querySelectorAll(".line");
-    lines.forEach((line) => {
-        line.remove();
-    });
-    if (select === "") {
-        for (let i = 0; i < linesInTab.length; i++) {
-        tbody.appendChild(linesInTab[i]);
-        }
-    } else {
-        let start = parseInt(pageNumero) * parseInt(select);
-        let end = parseInt(start) + parseInt(select) - 1;
-        let tri = linesInTab.slice(start, end);
-        for (let line of tri) {
-        tbody.appendChild(line);
-        }
-    }
-}
-
-// Boutons 'next' et 'previous' pour pagination
-document.getElementsByName("previous")[0].addEventListener("click", () => {
-    pageNumero -= 1;
-    pagination();
-});
-document.getElementsByName("previous")[1].addEventListener("click", () => {
-    pageNumero -= 1;
-    pagination();
-});
-document.getElementsByName("next")[0].addEventListener("click", () => {
-    pageNumero += 1;
-    pagination();
-});
-document.getElementsByName("next")[1].addEventListener("click", () => {
-    pageNumero += 1;
-    pagination();
-});
-
-// Liste à choix pour pagination
-document.getElementById("nb-elem").addEventListener("change", () => {
-    select = document.getElementById("nb-elem").value;
-    console.log(select);
-    pagination();
-});
 
 callJson();
