@@ -2,25 +2,57 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Accueil</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/films.css">
+        <title>Films</title>
     </head>
     <body>
-      {{range $}}   
-    <ul>
-       <li>Title : {{.Title}}    </li>   
-       <li>EpisodeID : {{.EpisodeID}}    </li>   
-       <li>OpeningCrawl : {{.OpeningCrawl}}    </li>   
-       <li>Director : {{.Director}}    </li>   
-       <li>Producer : {{.Producer}}    </li>   
-       <li>ReleaseDate : {{.ReleaseDate}}    </li>   
-       <li>Characters : {{.Characters}}    </li>   
-       <li>Planets: {{.Planets}}    </li>   
-       <li>Starships : {{.Starships}} </li>   
-       <li>Vehicles : {{.Vehicles}} </li>   
-       <li>Created : {{.Created}} </li> 
-       <li>Edited : {{.Edited}} </li>  
-       <li>URL : {{.URL}} </li>         
-    </ul>
-       {{end}}
+        <div class="title">
+            <h1>Films</h1>
+        </div>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
+        <select name="nombre" id="nb-elem">
+            <option value="20">--Please choose an option--</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="">all results</option>
+        </select>
+        <div class="search">
+            <label for="searchInput">Search</label>
+            <input type="text" name="searchInput" id="searchInput">
+            <select name="searchSelect" id="searchSelect">
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+                <option value="height">Height</option>
+            </select>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <div id="heroes">
+            <table id="tableau">
+                <thead>
+                    <tr>
+                        <th id="title" class="notReverse">Title</th>
+                        <th id="opening_crawl" >Opening Crawl</th>
+                        <th id="director">Director</th>
+                        <th id="producer">Producer</th>
+                        <th id="release_date">Release Date</th>
+                        <th id="characters">Characters</th>
+                        <th id="planets">Planets</th>
+                        <th id="starships">Starships</th>
+                        <th id="vehicles">Vehicles</th>
+                        <th id="species">Species</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button class="bouton" name="previous">Previous Page</button>
+        <button class="bouton" name="next">Next Page</button>
+        <script src="../scripts/js/films.js"></script>
     </body>
 </html>
