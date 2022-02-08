@@ -29,11 +29,12 @@ const loadTab = (persoes) => {
 
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
-    const peoples = await fetch(
-        `https://swapi.dev/api/people/?page=${page}`
-    )
-    .then((res) => res.json());
-    loadTab(peoples.results);
+    while (page != 10) {
+      const people = await fetch(`https://swapi.dev/api/people/?page=${page}`)
+      .then((res) => res.json());
+      loadTab(people.results);
+      page += 1
+    }
 };
 
 const callJson2 = async (page = pageNumero) => {

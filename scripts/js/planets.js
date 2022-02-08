@@ -27,11 +27,12 @@ const loadTab = (persoes) => {
 
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
-    const planets = await fetch(
-        `https://swapi.dev/api/planets/?page=${page}`
-    )
+  while (page != 7) {
+    const planets = await fetch(`https://swapi.dev/api/planets/?page=${page}`)
     .then((res) => res.json());
     loadTab(planets.results);
+    page += 1
+  }
 };
 
 // Création et affichage des lignes du tableau
