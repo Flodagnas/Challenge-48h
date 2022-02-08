@@ -4,24 +4,34 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/people.css">
+        <link rel="stylesheet" type ="text/css" href="../static/css/people.css">      
+        <link rel="stylesheet" type="text/css" href="../static/css/common.css"> 
         <title>Home</title>
     </head>
+    <header>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="films.html">Films</a></li>
+            <a href="planets.html">Planets</a>
+            <a href="species.html">Species</a>
+            <a href="starships.html">Starships</a>
+            <a href="vehicles.html">Vehicles</a>
+        </ul>
+    </header>
     <body>
         <div class="title">
             <h1>People</h1>
         </div>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="index.html">Index</a></li>
-        <li><a href="species.html">Species</a></li>
-        <select name="nombre" id="nb-elem">
-            <option value="20">--Please choose an option--</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="">all results</option>
-        </select>
+        <div id="elem">
+            <select name="nombre" id="nb-elem">
+                <option value="20">--Please choose an option--</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="">all results</option>
+            </select>
+        </div>
         <div class="search">
             <label for="searchInput">Search</label>
             <input type="text" name="searchInput" id="searchInput">
@@ -32,7 +42,9 @@
             </select>
         </div>
         <button class="bouton" name="previous">Previous Page</button>
+        <div id="next">
         <button class="bouton" name="next">Next Page</button>
+        </div>
         <div id="heroes">
             <table id="tableau">
                 <thead>
@@ -50,7 +62,9 @@
             </table>
         </div>
         <button class="bouton" name="previous">Previous Page</button>
-        <button class="bouton" name="next">Next Page</button>
+        <div id="next">
+            <button class="bouton" name="next">Next Page</button>
+        </div>
         <script src="../scripts/js/people.js"></script>
     </body>
 </html>

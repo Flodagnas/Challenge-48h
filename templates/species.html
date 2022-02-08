@@ -2,12 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type ="text/css" href="../static/css/species.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/common.css"> 
         <title>Accueil</title>
     </head>
+    <header>
+        <a href="home.html">Home</a>
+        <a href="films.html">Films</a>
+        <a href="people.html">People</a>
+        <a href="planets.html">Planets</a>
+        <a href="starships.html">Starships</a>
+        <a href="vehicles.html">Vehicles</a>
+    </header>
     <body>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="index.html">Index</a></li>
-        <li><a href="people.html">People</a></li>
       {{range $}}   
     <ul>
        <li>Name : {{.Name}}    </li>   
