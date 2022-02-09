@@ -2,6 +2,7 @@
 
     `git pull`;
     passthrul('date');
+    #"test"
 
 
 ?>
