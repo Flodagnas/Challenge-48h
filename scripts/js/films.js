@@ -58,7 +58,13 @@ const callJson = async (page = pageNumero) => {
       page += 1
       /*console.log((films.results));*/
     species = await buffedFetch(films.results, "species")
-     console.log(species);
+     console.log("species", species);
+     planets = await buffedFetch(films.results, "planets")
+     console.log("planets", planets);
+      vehicles = await buffedFetch(films.results, "vehicles")
+     console.log("vehicles", vehicles);
+     starships = await buffedFetch(films.results, "starships")
+     console.log("starships", starships);
       /*console.log(buffedFetch(films.results, 'planets').then);
       console.log(buffedFetch(films.results, 'vehicles').then);
       console.log(buffedFetch(films.results, 'starships').then;
