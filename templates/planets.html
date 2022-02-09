@@ -4,13 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/planets.css">
         <title>Planets</title>
     </head>
     <body>
         <div class="title">
             <h1>Planets</h1>
         </div>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
         <select name="nombre" id="nb-elem">
             <option value="20">--Please choose an option--</option>
             <option value="10">10</option>
@@ -35,61 +38,22 @@
                 <thead>
                     <tr>
                         <th id="name" class="notReverse">Name</th>
-                        <th id="height" >Height</th>
-                        <th id="mass">Mass</th>
-                        <th id="race">Race</th>
-                        <th id="hair_color">Hair color</th>
-                        <th id="skin_color">Skin color</th>
-                        <th id="eye_color">Eye color</th>
-                        <th id="birth_year">Birth year</th>
-                        <th id="gender">Gender</th>
+                        <th id="rotation_period" >Rotation Period</th>
+                        <th id="orbital_period">Orbital Period</th>
+                        <th id="diameter">Diameter</th>
+                        <th id="climate">Climate</th>
+                        <th id="gravity">Gravity</th>
+                        <th id="terrain">Terrain</th>
+                        <th id="surface_water">Surface Water</th>
+                        <th id="population">Population</th>
+                        <th id="created">Created</th>
+                        <th id="edited">Edited</th>
                     </tr>
                 </thead>
             </table>
         </div>
         <button class="bouton" name="previous">Previous Page</button>
         <button class="bouton" name="next">Next Page</button>
-       
-        <script src="../scripts/js/swapi.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", init);
-
-            function init() { 
-             var con = document.querySelector("#console");
-
-            function log(){
-                console.log(...arguments);
-        
-                var pre = document.createElement("pre");
-
-                for(var arg of arguments) {
-                    switch( typeof arg )
-                    {
-                        case "string":
-                            pre.append(arg);
-                        break;
-                        default:
-                        pre.append(JSON.stringify(arg, null ,2));
-                     }
-
-                        pre.append(" ");
-                }
-
-                    con.append(pre);
-        
-            }
-
-                log("load");
-                    //get all planets, page 2
-				swapiModule.getPlanets({page: 2}, function(data) {
-					log("Result of getPlanets (page 2)", data);
-				});
-
-
-                    
-            }
-        </script>
-        <div id="console"></div>
+        <script src="../scripts/js/planets.js"></script>
     </body>
 </html>

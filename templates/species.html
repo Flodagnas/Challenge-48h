@@ -4,91 +4,37 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/species.css">
         <title>Species</title>
     </head>
     <body>
         <div class="title">
             <h1>Species</h1>
         </div>
-        <select name="nombre" id="nb-elem">
-            <option value="20">--Please choose an option--</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="">all results</option>
-        </select>
-        <div class="search">
-            <label for="searchInput">Search</label>
-            <input type="text" name="searchInput" id="searchInput">
-            <select name="searchSelect" id="searchSelect">
-                <option value="name">Name</option>
-                <option value="gender">Gender</option>
-                <option value="height">Height</option>
-            </select>
-        </div>
-        <button class="bouton" name="previous">Previous Page</button>
-        <button class="bouton" name="next">Next Page</button>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
+        
         <div id="heroes">
             <table id="tableau">
                 <thead>
                     <tr>
-                        <th id="name" class="notReverse">Name</th>
-                        <th id="height" >Height</th>
-                        <th id="mass">Mass</th>
-                        <th id="race">Race</th>
-                        <th id="hair_color">Hair color</th>
+                        <th id="name" >Name</th>
+                        <th id="classification" >Classification</th>
+                        <th id="designation">Designation</th>
+                        <th id="average_height">Average Height</th>
                         <th id="skin_color">Skin color</th>
+                        <th id="hair_colors">Hair Colors</th>
                         <th id="eye_color">Eye color</th>
-                        <th id="birth_year">Birth year</th>
-                        <th id="gender">Gender</th>
+                        <th id="average_lifespan">Average Lifespan</th>
+                        <th id="homeworld">Homeworld</th>
+                        <th id="language">Language</th>
+                        <th id="people">People</th>
+                        <th id="films">Films</th>
                     </tr>
                 </thead>
             </table>
         </div>
-        <button class="bouton" name="previous">Previous Page</button>
-        <button class="bouton" name="next">Next Page</button>
-       
-        <script src="../scripts/js/swapi.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", init);
-
-            function init() { 
-             var con = document.querySelector("#console");
-
-            function log(){
-                console.log(...arguments);
-        
-                var pre = document.createElement("pre");
-
-                for(var arg of arguments) {
-                    switch( typeof arg )
-                    {
-                        case "string":
-                            pre.append(arg);
-                        break;
-                        default:
-                        pre.append(JSON.stringify(arg, null ,2));
-                     }
-
-                        pre.append(" ");
-                }
-
-                    con.append(pre);
-        
-            }
-
-                log("load");
-                    //get one species (assumes 1 works)
-				swapiModule.getSpecies(1,function(data) {
-					log("Result of getSpecies/1", data);
-				});
-
-                    
-            }
-        </script>
-        <div id="console"></div>
+        <script src="../scripts/js/species.js"></script>
     </body>
 </html>
