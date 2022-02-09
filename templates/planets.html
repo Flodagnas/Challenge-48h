@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/css/planets.css">
-        <title>Planets</title>
-    </head>
-    <body>
-        <div class="title">
-            <h1>Planets</h1>
-        </div>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="index.html">Index</a></li>
-        <li><a href="species.html">Species</a></li>
-        <select name="nombre" id="nb-elem">
-            <option value="20">--Please choose an option--</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="">all results</option>
-        </select>
-        <div class="search">
-            <label for="searchInput">Search</label>
-            <input type="text" name="searchInput" id="searchInput">
-            <select name="searchSelect" id="searchSelect">
-                <option value="name">Name</option>
-                <option value="gender">Gender</option>
-                <option value="height">Height</option>
-            </select>
-        </div>
-        <button class="bouton" name="previous">Previous Page</button>
-        <button class="bouton" name="next">Next Page</button>
-        <div id="heroes">
-            <table id="tableau">
-                <thead>
-                    <tr>
-                        <th id="name" class="notReverse">Name</th>
-                        <th id="rotation_period" >Rotation Period</th>
-                        <th id="orbital_period">Orbital Period</th>
-                        <th id="diameter">Diameter</th>
-                        <th id="climate">Climate</th>
-                        <th id="gravity">Gravity</th>
-                        <th id="terrain">Terrain</th>
-                        <th id="surface_water">Surface Water</th>
-                        <th id="population">Population</th>
-                        <th id="created">Created</th>
-                        <th id="edited">Edited</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <button class="bouton" name="previous">Previous Page</button>
-        <button class="bouton" name="next">Next Page</button>
-        <script src="../scripts/js/planets.js"></script>
-    </body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../static/css/common.css">
+      <title>Planets</title>
+  </head>
+  <nav>
+    <ul>
+        <li class="menu">
+            Menu
+            <ul class="sous-menu">
+              <a href="index.html">Index</a>
+              <a href="people.html">People</a>
+              <a href="films.html">Films</a>
+              <a href="species.html">Species</a>
+              <a href="starships.html">Starships</a>
+              <a href="vehicles.html">Vehicles</a>
+            </ul>
+        </li>
+    </ul>
+</nav>
+  <body>
+      <div class="title">
+          <h1>Planets</h1>
+      </div>
+      <select name="nombre" id="nb-elem">
+          <option value="20">--Please choose an option--</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="">all results</option>
+      </select>
+      <div class="search">
+          <label for="searchInput">Search</label>
+          <input type="text" name="searchInput" id="searchInput">
+          <select name="searchSelect" id="searchSelect">
+              <option value="name">Name</option>
+              <option value="gender">Gender</option>
+              <option value="height">Height</option>
+          </select>
+      </div>
+      <button class="bouton" name="previous">Previous Page</button>
+      <button class="bouton" name="next">Next Page</button>
+      <div id="heroes">
+          <table id="tableau">
+              <thead>
+                  <tr>
+                      <th id="name" class="notReverse">Name</th>
+                      <th id="rotation_period" >Rotation Period</th>
+                      <th id="orbital_period">Orbital Period</th>
+                      <th id="diameter">Diameter</th>
+                      <th id="climate">Climate</th>
+                      <th id="gravity">Gravity</th>
+                      <th id="terrain">Terrain</th>
+                      <th id="surface_water">Surface Water</th>
+                      <th id="population">Population</th>
+                      <th id="created">Created</th>
+                      <th id="edited">Edited</th>
+                  </tr>
+              </thead>
+          </table>
+      </div>
+      <button class="bouton" name="previous">Previous Page</button>
+      <button class="bouton" name="next">Next Page</button>
+      <script src="../scripts/js/planets.js"></script>
+  </body>
 </html>
