@@ -2,8 +2,6 @@ console.log("Script display loaded");
 
 let linesInTab = [];
 let pageNumero = 1;
-let people = [];
-let homeworldTest = "";
 
 // Traitement du tableu de données
 const loadTab = (persoes) => {
@@ -35,24 +33,20 @@ const callJson = async (page = pageNumero) => {
       const people = await fetch(`https://swapi.dev/api/people/?page=${page}`)
       .then((res) => res.json());
       loadTab(people.results);
-      homeworldTest = people.homeworld;
       page += 1
-    }
-    var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-    var regex = new RegExp(expression);
-
-    if (homeworldTest.match(regex)) {
-        alert("Successful match");
-    } else {
-        alert("No match");
+      
     }
 };
 
-
-const callJson2 = async () => {
-    const planets = await fetch(`${homeworldTest}`)
+const callJson2 = async (page = pageNumero) => {
+    const planets = await fetch(
+        `https://swapi.dev/api/planets/1/`
+    )
     .then((res) => res.json());
     loadTab(planets.results);
+
+    console.log (planets.results) ;
+
 };
 
 // Création et affichage des lignes du tableau
@@ -107,7 +101,8 @@ function makeLine(perso) {
 
     tabLines.push(tr);
     tbody.appendChild(tr);
+
 }
 
 callJson();
-callJson2();
+callJson2(); 

@@ -31,6 +31,11 @@ const callJson = async (page = pageNumero) => {
       .then((res) => res.json());
       loadTab(films.results);
       page += 1
+      link1 = films.results[0].species[0] ;
+      const species = await fetch(link1)
+      .then((response) => response.json());
+      loadTab(species.results);
+      console.log(species.results);
     }
 };
 
@@ -62,7 +67,7 @@ function makeLine(perso) {
     tdplanets.appendChild(document.createTextNode(films.planets));
     tdstarships.appendChild(document.createTextNode(films.starships));
     tdvehicles.appendChild(document.createTextNode(films.vehicles));
-    tdspecies.appendChild(document.createTextNode(films.species));
+    tdspecies.appendChild(document.createTextNode(species.name));
     tr.appendChild(tdtitle);
     tr.appendChild(tdopening_crawl);
     tr.appendChild(tddirector);
