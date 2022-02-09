@@ -7,6 +7,10 @@ header {
     align-content: space-between;
 }
 
+ul {
+    text-align: left;
+}
+
 html { 
     background: url(../146610-large-star-wars-star-background-1920x1080.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
