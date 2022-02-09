@@ -24,6 +24,31 @@ const loadTab = (persoes) => {
     table.appendChild(tbody);
 };
 
+async function buffedFetch(obj, property){
+    var link1 = new Array()
+    var link2 = new Array()
+    var result = new Array()
+    var result2 = new Array
+    //console.log(obj[5][property][0]);
+    for (let j=0; j<6; j++){ 
+        link1 = obj[j][property];
+        for (let i = 0; i <link1.length; i++ ){
+        //console.log("j=", j,"i=", i, link1[i]);
+        link2 = link1[i]
+        //console.log("link2", link2);
+        let response = await fetch(link2);
+        let response1 = await response.json();
+          //console.log("f", response.name, "t", typeof response.name);
+        result[i] = response1.name 
+        //console.log("j=",j, 'i=',i, response1.name);
+        //console.log(result2)
+        result2[j] = result
+        }   
+        result = []
+      }      
+     return result2;
+};
+
 // Chargement du JSON et des fonctions associées
 const callJson = async (page = pageNumero) => {
     while (page != 2) {
@@ -31,12 +56,25 @@ const callJson = async (page = pageNumero) => {
       .then((res) => res.json());
       loadTab(films.results);
       page += 1
-      link1 = films.results[0].species[0] ;
-      const species = await fetch(link1)
-      .then((response) => response.json());
-      loadTab(species.results);
-      console.log(species.results);
-    }
+      /*console.log((films.results));*/
+    species = await buffedFetch(films.results, "species")
+     console.log(species);
+      /*console.log(buffedFetch(films.results, 'planets').then);
+      console.log(buffedFetch(films.results, 'vehicles').then);
+      console.log(buffedFetch(films.results, 'starships').then;
+      console.log(buffedFetch(films.results, 'people'));*/
+      /*=for (var j=0; j<6; j++){ 
+      link1 = films.results[j].species;
+      for (var i = 0; i < link1.length; i++ ){
+      link2 = link1[i]
+      fetch(link2).then(response =>{
+          return response.json()
+      }).then(response =>{
+        console.log(response.name);
+      })
+      }
+    }*/
+}
 };
 
 // Création et affichage des lignes du tableau
@@ -67,7 +105,7 @@ function makeLine(perso) {
     tdplanets.appendChild(document.createTextNode(films.planets));
     tdstarships.appendChild(document.createTextNode(films.starships));
     tdvehicles.appendChild(document.createTextNode(films.vehicles));
-    tdspecies.appendChild(document.createTextNode(species.name));
+    tdspecies.appendChild(document.createTextNode(films.species));
     tr.appendChild(tdtitle);
     tr.appendChild(tdopening_crawl);
     tr.appendChild(tddirector);

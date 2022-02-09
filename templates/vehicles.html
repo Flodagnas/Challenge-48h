@@ -2,28 +2,46 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Accueil</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/vehicles.css">
+        <title>Vehicles</title>
     </head>
     <body>
-      {{range $}}   
-    <ul>
-       <li>Name : {{.Name}}    </li>   
-       <li>Model : {{.Model}}    </li>   
-       <li>Manufacturer : {{.Manufacturer}}    </li>   
-       <li>CostInCredits : {{.CostInCredits}}    </li>   
-       <li>Length : {{.Length}}    </li>   
-       <li>MaxAtmospheringSpeed : {{.MaxAtmospheringSpeed}}    </li>   
-       <li>Crew : {{.Crew}}    </li>   
-       <li>Passengers: {{.Passengers}}    </li>   
-       <li>CargoCapacity : {{.CargoCapacity}} </li>   
-       <li>Consumables : {{.Consumables}} </li>   
-       <li>VehicleClass : {{.VehicleClass}} </li> 
-       <li>Pilots : {{.Pilots}} </li>   
-       <li>Films : {{.Films}} </li>   
-       <li>Created : {{.Created}} </li>   
-       <li>Edited : {{.Edited}} </li> 
-       <li>URL : {{.URL}} </li>  
-    </ul>
-       {{end}}
+        <div class="title">
+            <h1>Vehicles</h1>
+        </div>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="species.html">Species</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="starships.html">Starships</a></li>
+
+        
+        <div id="heroes">
+            <table id="tableau">
+                <thead>
+                    <tr>
+                        <th id="name" class="notReverse">name</th>
+                        <th id="model" >model</th>
+                        <th id="manufacturer">manufacturer</th>
+                        <th id="cost_in_credits">cost_in_credits</th>
+                        <th id="length">length</th>
+                        <th id="max_atmosphering_speed">max_atmosphering_speed</th>
+                        <th id="crew">crew</th>
+                        <th id="passengers">passengers</th>
+                        <th id="cargo_capacity">cargo_capacity</th>
+                        <th id="consumables">consumables</th>
+                        <th id="vehicle_class">vehicle_class</th>
+                        <th id="pilots">pilots</th>
+                        <th id="films">films</th>
+                        <th id="created">created</th>
+                        <th id="edited">edited</th>
+                        <th id="url">url</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <script src="../scripts/js/vehicles.js"></script>
     </body>
 </html>

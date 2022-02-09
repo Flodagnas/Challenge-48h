@@ -34,6 +34,7 @@ const callJson = async (page = pageNumero) => {
       .then((res) => res.json());
       loadTab(people.results);
       page += 1
+<<<<<<< HEAD
       
     }
 };
@@ -47,6 +48,16 @@ const callJson2 = async (page = pageNumero) => {
 
     console.log (planets.results) ;
 
+=======
+    }
+};
+const callJson2 = async (page = pageNumero) => {
+    const planets = await fetch(
+        `https://swapi.dev/api/planets/?page=${page}`
+    )
+    .then((res) => res.json());
+    loadTab(planets.results);
+>>>>>>> origin/yassine
 };
 
 // Création et affichage des lignes du tableau
